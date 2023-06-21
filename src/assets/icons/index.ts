@@ -1,0 +1,16 @@
+export { default as close } from './close.svg';
+export { default as coverPlaceholder } from './coverPlaceholder.svg';
+export { default as down } from './down.svg';
+export { default as facebook } from './facebook.svg';
+export { default as instagram } from './instagram.svg';
+export { default as linkedin } from './linkedin.svg';
+export { default as logo } from './logo.svg';
+export { default as menu } from './menu.svg';
+export { default as search } from './search.svg';
+export { default as sortAscending } from './sortAscending.svg';
+export { default as sortDescending } from './sortDescending.svg';
+export { default as squareFour } from './squareFour.svg';
+export { default as star } from './star.svg';
+export { default as starOutline } from './starOutline.svg';
+export { default as up } from './up.svg';
+export { default as vk } from './vk.svg';
