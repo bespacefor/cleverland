@@ -7,9 +7,15 @@
     }
   },
   "rules": {
-    "prettier/prettier": 2,
-    "import/order": [
+    "prettier/prettier": [
       2,
+      {
+        "semi": true,
+        "trailingComma": "none"
+      }
+    ],
+    "import/order": [
+      "error",
       {
         "groups": ["external", "builtin", "index", "sibling", "parent", "internal", "type"],
         "alphabetize": {
@@ -19,5 +25,23 @@
         "newlines-between": "always-and-inside-groups"
       }
     ]
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.js", "*.jsx", "*.ts", "*.tsx"],
+      "rules": {
+        "import/order": [
+          "error",
+          {
+            "groups": ["external", "builtin", "index", "sibling", "parent", "internal", "type"],
+            "alphabetize": {
+              "order": "asc",
+              "caseInsensitive": true
+            },
+            "newlines-between": "always-and-inside-groups"
+          }
+        ]
+      }
+    }
+  ]
 }
