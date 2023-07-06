@@ -1,12 +1,12 @@
 import { createGlobalStyle } from 'styled-components';
 
-export const GlobalStyles = createGlobalStyle`
+export default createGlobalStyle`
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-  *,
+
 *:before,
 *:after {
   box-sizing: border-box;
@@ -25,6 +25,8 @@ h2,
 h3,
 h4,
 p,
+ul[class],
+ol[class],
 li,
 figure,
 figcaption,
@@ -37,7 +39,6 @@ dd {
 a {
   text-decoration: none;
   color: inherit;
-  display: contents;
 }
 
 a:not([class]) {
@@ -45,6 +46,7 @@ a:not([class]) {
 }
 
 img {
+  max-width: 100%;
   display: block;
 }
 

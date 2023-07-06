@@ -1,7 +1,14 @@
-import React from 'react';
+import { ThemeProvider } from 'styled-components';
 
-function App() {
-  return <h1>Hello Cleverland</h1>;
-}
+import { Layout } from './components/layout';
+import GlobalStyles from './styles/global';
+import { baseTheme } from './styles/theme';
+
+const App = () => (
+  <ThemeProvider theme={baseTheme}>
+    <GlobalStyles />
+    <Layout />
+  </ThemeProvider>
+);
 
 export default App;
