@@ -14,28 +14,26 @@ export const baseTheme: ITheme = {
     }
   },
   fonts: {
-    h1: 'medium 52px/64px Montserrat',
-    h2: '500 44px/54px Montserrat',
-    h3: '700 32px/40px Montserrat',
-    mobileH3: '700 18px/28px Montserrat',
+    h1: '500 52px/64px Montserrat',
+    h2: '600 44px/54px Montserrat',
+    h3: '700 32px/40px Montserrat', //done
     h4: '700 24px/30px Montserrat',
-    h5: 'bold 22px/32px Montserrat',
-    desktopH5: '700 18px/28px Montserrat',
-    h5Tablet: '700 12px/18px Montserrat',
+    h5: '700 18px/28px Montserrat',
     subtitleLarge: '600 16px/24px Montserrat',
-    subtitleSmall: '600 14px/18px Montserrat',
-    span: '400 14px/24px Montserrat',
-    bodySmall: '400 14px/18px Montserrat',
-    bodySmallTwo: '400 12px/18px Montserrat',
+    subtitleSmall: '600 14px/18px Montserrat', //done
     bodyLarge: '400 16px/24px Montserrat',
-    bodyMedium: '400 15px/24px Montserrat',
-    bodyMediumText: '400 15px/20px Montserrat',
-    infoSmall: '400 12px/16px Montserrat',
+    bodySmall: '400 14px/18px Montserrat',
     infoLarge: '500 12px/16px Montserrat',
-    normal: '400 16px/24px Montserrat',
-    bodySubtitle: '400 16px/28px Montserrat',
-    buttonSmall: '600 12px/18px Montserrat',
-    buttonLarge: '600 16px/24px Montserrat'
+    infoSmall: '400 12px/16px Montserrat',
+    buttonLarge: '600 16px/24px Montserrat',
+    buttonSmall: '600 14px/18px Montserrat',
+    mobileH1: '500 32px/40px Montserrat',
+    mobileH2: '600 26px/36px Montserrat',
+    mobileH3: '700 18px/28px Montserrat', //done
+    mobileBodyLarge: '400 15px/20px Montserrat',
+    mobileBodySmall: '400 12px/18px Montserrat',
+    mobileButtonLarge: '600 16px/20px Montserrat',
+    mobileButtonSmall: '600 12px/18px Montserrat'
   },
   media: {
     laptop: '(max-width: 1440px)',

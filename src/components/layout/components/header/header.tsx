@@ -1,13 +1,31 @@
-import { Container, Title, Text } from './header.style';
+import { FC } from 'react';
+import { Link } from 'react-router-dom';
 
-export const Header = () => (
-  <Container>
-    <Title>Header</Title>
-    <Text>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia animi ipsam accusamus iusto quasi ratione quaerat
-      consectetur deleniti nemo vero, quod tempora optio similique cumque pariatur voluptate commodi exercitationem
-      voluptatum minus accusantium beatae autem. Earum itaque iure animi dicta numquam doloremque non ipsum, iste
-      dolores, sapiente, consequatur sunt voluptas eveniet.
-    </Text>
-  </Container>
+import HeaderAuthorization from './components/header-authorization/header-authorization';
+import { LeftContainer, HeaderContainer, LogoContainer, Title } from './header.style';
+
+import { Logo } from '../../../../assets/icons';
+import { Wrapper } from '../../../../styles/wrapper';
+import { UserDTO } from '../../../../types/types';
+
+type HeaderProps = {
+  user: UserDTO;
+};
+
+const Header: FC<HeaderProps> = ({ user }) => (
+  <Wrapper>
+    <HeaderContainer>
+      <LeftContainer>
+        <Link to='/'>
+          <LogoContainer>
+            <Logo />
+          </LogoContainer>
+        </Link>
+        <Title>Библиотека</Title>
+      </LeftContainer>
+      <HeaderAuthorization user={user} />
+    </HeaderContainer>
+  </Wrapper>
 );
+
+export default Header;
