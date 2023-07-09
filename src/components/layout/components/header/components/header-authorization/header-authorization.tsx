@@ -4,25 +4,23 @@ import { Link } from 'react-router-dom';
 
 import { HeaderAuthorizationContainer, Subtitle } from './header-authorization.style';
 
-import { avatarPlaceholder } from '../../../../../../assets/images';
-import { UserDTO } from '../../../../../../types/types';
-import Avatar from '../../../../../avatar/avatar';
+import { avatarPlaceholder } from 'assets/images';
+import { Avatar } from 'components/avatar';
+import { UserDTO } from 'types/types';
 
-interface HeaderAuthorizationProps {
+type HeaderAuthorizationProps = {
   user: UserDTO;
-}
+};
 
-const HeaderAuthorization: FC<HeaderAuthorizationProps> = ({ user }) => {
+export const HeaderAuthorization: FC<HeaderAuthorizationProps> = ({ user }) => {
   const { name, avatar } = user;
 
   return (
     <HeaderAuthorizationContainer>
       <Subtitle>Привет, {name}!</Subtitle>
       <Link to='/'>
-        <Avatar size={'58px'} background={avatar || avatarPlaceholder} />
+        <Avatar size={58} background={avatar || avatarPlaceholder} />
       </Link>
     </HeaderAuthorizationContainer>
   );
 };
-
-export default HeaderAuthorization;

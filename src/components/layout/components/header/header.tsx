@@ -1,18 +1,18 @@
 import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
-import HeaderAuthorization from './components/header-authorization/header-authorization';
-import { LeftContainer, HeaderContainer, LogoContainer, Title } from './header.style';
+import { HeaderAuthorization } from './components/header-authorization';
+import { HeaderContainer, LeftContainer, LogoContainer, Title } from './header.style';
 
-import { Logo } from '../../../../assets/icons';
-import { Wrapper } from '../../../../styles/wrapper';
-import { UserDTO } from '../../../../types/types';
+import { Logo } from 'assets/icons';
+import { Wrapper } from 'styles/wrapper';
+import { UserDTO } from 'types/types';
 
 type HeaderProps = {
   user: UserDTO;
 };
 
-const Header: FC<HeaderProps> = ({ user }) => (
+export const Header: FC<HeaderProps> = ({ user }) => (
   <Wrapper>
     <HeaderContainer>
       <LeftContainer>
@@ -27,5 +27,3 @@ const Header: FC<HeaderProps> = ({ user }) => (
     </HeaderContainer>
   </Wrapper>
 );
-
-export default Header;

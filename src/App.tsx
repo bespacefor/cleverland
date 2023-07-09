@@ -1,8 +1,9 @@
 import { ThemeProvider } from 'styled-components';
 
-import Layout from './components/layout/layout';
 import GlobalStyles from './styles/global';
-import { baseTheme } from './styles/theme';
+
+import { Layout } from 'components/layout';
+import { baseTheme } from 'styles/theme';
 
 const App = () => (
   <ThemeProvider theme={baseTheme}>
