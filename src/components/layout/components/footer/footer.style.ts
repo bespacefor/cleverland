@@ -1,14 +1,22 @@
 import styled from 'styled-components';
 
-export const Container = styled.div`
-  background-color: #2b2b2b;
-  border-radius: 5px;
-`;
-
-export const Title = styled.h1`
-  font-weight: 300;
+export const FooterContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 0;
+  border-top: ${({ theme }) => `1px solid ${theme.colors.grey.black20}`};
+  @media ${({ theme }) => theme.media.mobile} {
+    flex-direction: column;
+    padding: 16px 0 8px;
+    gap: 16px;
+  }
 `;
 
 export const Text = styled.p`
-  font-size: 12px;
+  font: ${({ theme }) => theme.fonts.bodyLarge};
+  @media ${({ theme }) => theme.media.mobile} {
+    font: ${({ theme }) => theme.fonts.mobileBodyLarge};
+    text-align: center;
+  }
 `;

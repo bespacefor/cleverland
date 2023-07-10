@@ -1,13 +1,16 @@
-import { Container, Title, Text } from './footer.style';
+import { FC } from 'react';
 
-export const Footer = () => (
-  <Container>
-    <Title>Footer</Title>
-    <Text>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia animi ipsam accusamus iusto quasi ratione quaerat
-      consectetur deleniti nemo vero, quod tempora optio similique cumque pariatur voluptate commodi exercitationem
-      voluptatum minus accusantium beatae autem. Earum itaque iure animi dicta numquam doloremque non ipsum, iste
-      dolores, sapiente, consequatur sunt voluptas eveniet.
-    </Text>
-  </Container>
+import { SocialMediaList } from './components/social-media-list';
+import { FooterContainer } from './footer.style';
+import { Text } from './footer.style';
+
+import { Wrapper } from 'styles/wrapper';
+
+export const Footer: FC = () => (
+  <Wrapper>
+    <FooterContainer>
+      <Text>&copy; 2020-2023 Cleverland. Все права защищены.</Text>
+      <SocialMediaList />
+    </FooterContainer>
+  </Wrapper>
 );

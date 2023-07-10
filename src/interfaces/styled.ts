@@ -6,6 +6,13 @@ export interface ITheme {
       dark: string;
       dark30: string;
     };
+    grey: {
+      black40: string;
+      black43: string;
+      black20: string;
+      black42: string;
+      black5: string;
+    };
     button: {
       pressed: string;
       hover: string;
