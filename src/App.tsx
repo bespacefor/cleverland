@@ -2,14 +2,12 @@ import { ThemeProvider } from 'styled-components';
 
 import GlobalStyles from './styles/global';
 
-import { Layout } from 'components/layout';
+import { Router } from 'router';
 import { baseTheme } from 'styles/theme';
 
-const App = () => (
+export const App = () => (
   <ThemeProvider theme={baseTheme}>
     <GlobalStyles />
-    <Layout />
+    <Router />
   </ThemeProvider>
 );
-
-export default App;

@@ -1,8 +1,8 @@
-import { Container, Title, Text } from './contract-text.style';
+import { Container, Title, Text } from './books.style';
 
-export const ContractText = () => (
+export const Books = () => (
   <Container>
-    <Title>ContractText</Title>
+    <Title>MainPage</Title>
     <Text>
       Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia animi ipsam accusamus iusto quasi ratione quaerat
       consectetur deleniti nemo vero, quod tempora optio similique cumque pariatur voluptate commodi exercitationem

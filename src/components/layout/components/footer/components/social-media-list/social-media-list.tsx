@@ -10,6 +10,7 @@ export const SocialMediaList: FC = () => {
       {SOCIAL_MEDIA_LINKS.map((item, index) => {
         const IconComponent = item.icon;
         return (
+          // eslint-disable-next-line react/no-array-index-key
           <a href={item.url} key={index} target='_blank' rel='noreferrer'>
             <IconComponent />
           </a>

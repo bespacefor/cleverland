@@ -18,5 +18,6 @@ export const Text = styled.p`
   @media ${({ theme }) => theme.media.mobile} {
     font: ${({ theme }) => theme.fonts.mobileBodyLarge};
     text-align: center;
+    padding: 0 40px;
   }
 `;

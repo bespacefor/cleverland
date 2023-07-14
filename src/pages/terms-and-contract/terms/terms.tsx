@@ -1,6 +1,6 @@
-import { Container, Title, Text } from './terms-text.style';
+import { Container, Title, Text } from './terms.style';
 
-export const TermsText = () => (
+export const Terms = () => (
   <Container>
     <Title>TermsText</Title>
     <Text>
