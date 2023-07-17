@@ -5,6 +5,7 @@ import { BookPage } from 'pages/book';
 import { Books } from 'pages/main';
 import { Contract } from 'pages/terms-and-contract/contract';
 import { Terms } from 'pages/terms-and-contract/terms';
+import { RouteNames } from 'types/enum';
 
 const router = createHashRouter([
   {
@@ -16,27 +17,27 @@ const router = createHashRouter([
         element: <Books />
       },
       {
-        path: '/books',
+        path: `/${RouteNames.books}`,
         element: <Books />
       },
       {
-        path: '/books/all',
+        path: `/${RouteNames.books}/all}`,
         element: <Books />
       },
       {
-        path: '/books/:category',
+        path: `/${RouteNames.books}/:category`,
         element: <Books />
       },
       {
-        path: '/books/:category/:bookId',
+        path: `/${RouteNames.books}/:category/:bookId`,
         element: <BookPage />
       },
       {
-        path: '/terms',
+        path: `/${RouteNames.terms}`,
         element: <Terms />
       },
       {
-        path: '/contract',
+        path: `/${RouteNames.contract}`,
         element: <Contract />
       }
     ]

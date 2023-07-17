@@ -6,7 +6,9 @@ export const baseTheme: ITheme = {
       accent: '#FF5253',
       white: '#FFFFFF',
       dark: '#363636',
-      dark30: '#3636364D'
+      dark30: '#3636364D',
+      hover: 'FF740F',
+      stars: '#FFBC1F'
     },
     grey: {
       black40: '#727272',
@@ -18,6 +20,14 @@ export const baseTheme: ITheme = {
     button: {
       pressed: 'linear-gradient(233.73deg, #F83600 -16.08%, #F9D423 327.37%)',
       hover: 'linear-gradient(231.58deg, #F83600 -53.35%, #F9D423 297.76%)'
+    },
+    shadow: {
+      header: '4px 4px 4px rgba(54, 54, 54, 0.05), -4px 4px 4px rgba(54, 54, 54, 0.05)',
+      button: '0px 2px 5px rgba(54, 54, 54, 0.1)',
+      pressed: '0px 3px 4px rgba(222, 125, 11, 0.2), 0px 1px 10px rgba(249, 89, 8, 0.2)',
+      card: '0px 2px 4px rgba(191, 196, 201, 0.2), 0px 3px 4px rgba(191, 196, 201, 0.18), 0px 1px 5px rgba(191, 196, 201, 0.24)',
+      buttonFilter:
+        'drop-shadow(0px 2px 4px rgba(191, 196, 201, 0.2)) drop-shadow(0px 3px 4px rgba(191, 196, 201, 0.18)) drop-shadow(0px 1px 5px rgba(191, 196, 201, 0.24))'
     }
   },
   fonts: {

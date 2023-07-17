@@ -5,6 +5,8 @@ export interface ITheme {
       white: string;
       dark: string;
       dark30: string;
+      hover: string;
+      stars: string;
     };
     grey: {
       black40: string;
@@ -16,6 +18,13 @@ export interface ITheme {
     button: {
       pressed: string;
       hover: string;
+    };
+    shadow: {
+      header: string;
+      button: string;
+      pressed: string;
+      card: string;
+      buttonFilter: string;
     };
   };
   fonts: {
