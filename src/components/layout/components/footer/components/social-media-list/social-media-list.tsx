@@ -3,6 +3,7 @@ import { FC } from 'react';
 import { SocialMediaContainer } from './social-media-list.style';
 
 import { SOCIAL_MEDIA_LINKS } from 'consts';
+import { keyExtractor } from 'utils/key-extractor';
 
 export const SocialMediaList: FC = () => {
   return (
@@ -10,8 +11,7 @@ export const SocialMediaList: FC = () => {
       {SOCIAL_MEDIA_LINKS.map((item, index) => {
         const IconComponent = item.icon;
         return (
-          // eslint-disable-next-line react/no-array-index-key
-          <a href={item.url} key={index} target='_blank' rel='noreferrer'>
+          <a href={item.url} key={keyExtractor(index)} target='_blank' rel='noreferrer'>
             <IconComponent />
           </a>
         );
