@@ -9,10 +9,11 @@ export interface ITheme {
       stars: string;
     };
     grey: {
-      black40: string;
+      black70: string;
       black43: string;
-      black20: string;
       black42: string;
+      black40: string;
+      black20: string;
       black5: string;
     };
     button: {
@@ -33,6 +34,7 @@ export interface ITheme {
     h3: string;
     h4: string;
     h5: string;
+    h5Tablet: string;
     subtitleLarge: string;
     subtitleSmall: string;
     bodyLarge: string;

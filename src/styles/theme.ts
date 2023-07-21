@@ -11,10 +11,11 @@ export const baseTheme: ITheme = {
       stars: '#FFBC1F'
     },
     grey: {
-      black40: '#727272',
+      black70: '#727272',
       black43: '#A7A7A7',
-      black20: '#BFC4C9',
       black42: '#EBEBEB',
+      black40: '#727272',
+      black20: '#BFC4C9',
       black5: '#F9F9FA'
     },
     button: {
@@ -36,6 +37,7 @@ export const baseTheme: ITheme = {
     h3: '700 32px/40px Montserrat',
     h4: '700 24px/30px Montserrat',
     h5: '700 18px/28px Montserrat',
+    h5Tablet: '700 12px/18px Montserrat',
     subtitleLarge: '600 16px/24px Montserrat',
     subtitleSmall: '600 14px/18px Montserrat',
     bodyLarge: '400 16px/24px Montserrat',

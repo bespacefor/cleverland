@@ -26,16 +26,16 @@ export enum TextPlaceholder {
   sorting = 'По рейтингу',
   booking = 'Забронировать',
   booked = 'Забронирована',
-  used = 'Занята до',
+  busy = 'Занята до',
   addRating = 'оценить книгу',
   noRatings = 'ещё нет оценок'
 }
 
-export enum ActionType {
+export enum ViewVariant {
   search = 'search',
   sortDown = 'sortDown',
   sortUp = 'sortUp',
-  window = 'windowView',
+  tiles = 'tilesView',
   list = 'listView'
 }
 

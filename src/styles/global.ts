@@ -39,6 +39,7 @@ dd {
 a {
   text-decoration: none;
   color: inherit;
+  display: contents;
 }
 
 a:not([class]) {

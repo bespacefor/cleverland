@@ -2,12 +2,12 @@ import React, { FC, useCallback } from 'react';
 
 import styled from 'styled-components';
 
-import { ActionType } from 'types/enum';
+import { ViewVariant } from 'types/enum';
 
 type CircleButtonProps = {
-  type: ActionType;
+  type: ViewVariant;
   icon: FC;
-  onClick: (type: ActionType) => void;
+  onClick: (type: ViewVariant) => void;
   isActive: boolean;
 };
 

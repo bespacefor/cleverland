@@ -19,9 +19,10 @@ const buttonStyles = css`
   border-radius: 20px;
   cursor: pointer;
   & p {
-    font: ${({ theme }) => theme.fonts.buttonSmall};
+    font: ${({ theme }) => theme.fonts.mobileButtonSmall};
     text-transform: uppercase;
     letter-spacing: 0.2px;
+    white-space: nowrap;
   }
 `;
 
