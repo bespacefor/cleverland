@@ -19,7 +19,7 @@ export const BookRating: FC<BookRatingProps> = ({ rating, stylesClass }) => {
     const starFill = (index: number) =>
       index < Math.round(rating) ? baseTheme.colors.main.stars : baseTheme.colors.main.white;
 
-    return [...Array(5)].map((index) => <StarOutline fill={starFill(index)} key={keyExtractor(index)} />);
+    return [...Array(5)].map((_, index) => <StarOutline fill={starFill(index)} key={keyExtractor(index)} />);
   }, [rating]);
 
   return <Container className={stylesClass}>{renderStars()}</Container>;

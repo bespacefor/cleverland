@@ -9,5 +9,5 @@ type AvatarProps = {
 };
 
 export const Avatar: FC<AvatarProps> = ({ size, background }) => {
-  return <AvatarContainer size={size} background={background} />;
+  return <AvatarContainer size={size} $background={background} />;
 };
