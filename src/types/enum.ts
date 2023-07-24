@@ -16,9 +16,9 @@ export enum BookCategory {
   culture = 'culture',
   science = 'science',
   nonfiction = 'nonfiction',
-  reference = 'reference',
+  manuals = 'manuals',
   fantastic = 'fantastic',
-  humorous = 'humorous'
+  humor = 'humor'
 }
 
 export enum TextPlaceholder {
@@ -35,8 +35,8 @@ export enum ViewVariant {
   search = 'search',
   sortDown = 'sortDown',
   sortUp = 'sortUp',
-  tiles = 'tilesView',
-  list = 'listView'
+  tiles = 'tiles',
+  list = 'list'
 }
 
 export enum ButtonType {
