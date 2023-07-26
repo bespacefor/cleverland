@@ -2,7 +2,7 @@ import { book } from 'assets/images';
 import { BookCategory } from 'types/enum';
 import { BookDTO } from 'types/types';
 
-export const mockBooks: BookDTO[] = [
+export const MOCK_BOOKS: BookDTO[] = [
   {
     id: 0,
     category: BookCategory.computer,
@@ -23,7 +23,7 @@ export const mockBooks: BookDTO[] = [
     isBooked: false,
     about:
       'Алгоритмы — это всего лишь пошаговые алгоритмы решения задач, и большинство таких задач уже были кем-то решены, протестированы и проверены. Можно, конечно, погрузится в глубокую философию гениального Кнута, изучить многостраничные фолианты с доказательствами и обоснованиями, но хотите ли вы тратить на это свое время? Откройте великолепно иллюстрированную книгу и вы сразу поймете, что алгоритмы — это просто. А грокать алгоритмы — это веселое и увлекательное занятие.',
-    rating: 2
+    rating: undefined
   },
   {
     id: 2,

@@ -10,14 +10,18 @@ import { keyExtractor } from 'utils/key-extractor';
 type StarsRatingProps = {
   rating?: number;
   stylesClass?: string;
+  showEmptyStars?: boolean;
 };
 
-export const StarsRating: FC<StarsRatingProps> = ({ rating, stylesClass }) => {
+export const StarsRating: FC<StarsRatingProps> = ({ rating, stylesClass, showEmptyStars = true }) => {
   const renderStars = useCallback(() => {
-    if (!rating) return <p>{TextPlaceholder.noRatings}</p>;
-
-    const starFill = (index: number) =>
-      index < Math.round(rating) ? baseTheme.colors.main.stars : baseTheme.colors.main.white;
+    const starFill = (index: number) => {
+      if (index < Math.round(rating!)) {
+        return baseTheme.colors.main.stars;
+      } else {
+        return baseTheme.colors.main.white;
+      }
+    };
 
     return [...Array(5)].map((_, index) => <StarOutline fill={starFill(index)} key={keyExtractor(index)} />);
   }, [rating]);

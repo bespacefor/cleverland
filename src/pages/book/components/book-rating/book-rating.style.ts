@@ -1,14 +1,25 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-  background-color: #2b2b2b;
-  border-radius: 5px;
-`;
-
-export const Title = styled.h1`
-  font-weight: 300;
-`;
-
-export const Text = styled.p`
-  font-size: 12px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+  font: ${({ theme }) => theme.fonts.h5};
+  @media ${({ theme }) => theme.media.mobile} {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .ratingInBookPage {
+    gap: 16px;
+    & svg {
+      @media ${({ theme }) => theme.media.mobile} {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+  p {
+    font: ${({ theme }) => theme.fonts.bodySmall};
+    white-space: nowrap;
+  }
 `;

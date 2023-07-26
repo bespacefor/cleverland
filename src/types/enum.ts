@@ -60,5 +60,5 @@ export enum DetailsTitles {
   genre = 'Жанр',
   weight = 'Вес',
   ISBN = 'ISBN',
-  producer = 'Изготовитель'
+  manufacturer = 'Изготовитель'
 }

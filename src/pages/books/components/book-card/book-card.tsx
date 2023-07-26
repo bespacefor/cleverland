@@ -7,7 +7,7 @@ import { TileAbout, TileBookInfo, TileButtonContainer } from './tile-card.styles
 import { CoverPlaceholder } from 'assets/icons';
 import { PrimaryButton } from 'components/buttons/primary-button';
 import { StarsRating } from 'components/stars-rating';
-import { ViewVariant } from 'types/enum';
+import { TextPlaceholder, ViewVariant } from 'types/enum';
 import { BookDTO } from 'types/types';
 import { getButtonStyles } from 'utils/get-button-styles';
 
@@ -26,7 +26,11 @@ export const BookCard: FC<BookProps> = ({ book: { image, title, author, isBooked
         <Image>{image ? <img alt={title} src={image} /> : <CoverPlaceholder />}</Image>
         {view === ViewVariant.tiles ? (
           <TileBookInfo>
-            <StarsRating rating={rating} stylesClass='ratingTileCard' />
+            {rating ? (
+              <StarsRating rating={rating} stylesClass='ratingListCard' showEmptyStars={false} />
+            ) : (
+              <p>{TextPlaceholder.noRatings}</p>
+            )}
             <TileAbout>
               <h5>{title}</h5>
               <p>{author}</p>
@@ -42,7 +46,11 @@ export const BookCard: FC<BookProps> = ({ book: { image, title, author, isBooked
               <p>{author}</p>
             </ListAbout>
             <ListButtonContainer>
-              <StarsRating rating={rating} stylesClass='ratingListCard' />
+              {rating ? (
+                <StarsRating rating={rating} stylesClass='ratingListCard' showEmptyStars={false} />
+              ) : (
+                <p>{TextPlaceholder.noRatings}</p>
+              )}
               <PrimaryButton type={buttonType} title={buttonTitle} disabled={isBooked && !!bookedTill} />
             </ListButtonContainer>
           </ListBookInfo>

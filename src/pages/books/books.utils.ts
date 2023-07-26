@@ -1,3 +1,3 @@
-import { mockBooks } from 'mocks/books.mock';
+import { MOCK_BOOKS } from 'mocks/books.mock';
 
-export const getBooksList = () => mockBooks;
+export const getBooksList = () => MOCK_BOOKS;
