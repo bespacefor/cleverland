@@ -4,7 +4,7 @@ import { ListContainer } from './contract.style';
 
 import { TermsAndContractContainer } from '../components/container';
 
-export const Contract: FC = () => (
+export const ContractPage: FC = () => (
   <TermsAndContractContainer>
     <ListContainer>
       <h5>Договор оферты</h5>

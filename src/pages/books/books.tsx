@@ -11,7 +11,7 @@ import { useOnMount } from 'hooks/use-on-mount';
 import { ViewVariant } from 'types/enum';
 import { BookDTO } from 'types/types';
 
-export const Books: FC = () => {
+export const BooksPage: FC = () => {
   const [booksList, setBooksList] = useState<BookDTO[]>([]);
   const [activeView, setActiveView] = useState<ViewVariant>(ViewVariant.tiles);
   const [loading, setLoading] = useState(true);
@@ -38,7 +38,7 @@ export const Books: FC = () => {
   return (
     <ContentContainer>
       <BooksContainer>
-        <FilterList typeView={activeView} onToggleView={activeViewHandler} />
+        <FilterList view={activeView} onToggleView={activeViewHandler} />
         {loading ? <p>Loading...</p> : <BooksList books={booksList} view={activeView} />}
       </BooksContainer>
     </ContentContainer>

@@ -23,3 +23,12 @@ export type BookDTO = {
   ISBN?: string;
   manufacturer?: string;
 };
+
+export type CommentDTO = {
+  avatar?: string;
+  firstName: string;
+  lastName: string;
+  publicationDate: string;
+  rating: number;
+  commentText?: string;
+};

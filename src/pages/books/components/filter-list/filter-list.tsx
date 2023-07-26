@@ -11,11 +11,11 @@ import { SearchInput } from 'components/forms/search-input';
 import { TextPlaceholder, ViewVariant } from 'types/enum';
 
 type FilterListProps = {
-  typeView: ViewVariant;
+  view: ViewVariant;
   onToggleView: (type: ViewVariant) => void;
 };
 
-export const FilterList: FC<FilterListProps> = ({ typeView, onToggleView }) => (
+export const FilterList: FC<FilterListProps> = ({ view, onToggleView }) => (
   <FilterListContainer>
     <ButtonsContainer $isVisibleMobile={false}>
       <SearchInput />
@@ -30,13 +30,13 @@ export const FilterList: FC<FilterListProps> = ({ typeView, onToggleView }) => (
         onClick={onToggleView}
         type={ViewVariant.tiles}
         icon={MenuTiles}
-        $isActive={typeView === ViewVariant.tiles}
+        $isActive={view === ViewVariant.tiles}
       />
       <CircleButton
         onClick={onToggleView}
         type={ViewVariant.list}
         icon={MenuList}
-        $isActive={typeView === ViewVariant.list}
+        $isActive={view === ViewVariant.list}
       />
     </DefaultButtonsContainer>
   </FilterListContainer>

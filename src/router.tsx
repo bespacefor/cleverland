@@ -2,10 +2,9 @@ import { RouterProvider, createHashRouter } from 'react-router-dom';
 
 import { Layout } from 'components/layout';
 import { BookPage } from 'pages/book';
-
-import { Books } from 'pages/books';
-import { Contract } from 'pages/terms-and-contract/contract';
-import { Terms } from 'pages/terms-and-contract/terms';
+import { BooksPage } from 'pages/books';
+import { ContractPage } from 'pages/terms-and-contract/contract';
+import { TermsPage } from 'pages/terms-and-contract/terms';
 import { RouteNames } from 'types/enum';
 
 const router = createHashRouter([
@@ -15,19 +14,19 @@ const router = createHashRouter([
     children: [
       {
         path: '/',
-        element: <Books />
+        element: <BooksPage />
       },
       {
         path: `/${RouteNames.books}`,
-        element: <Books />
+        element: <BooksPage />
       },
       {
         path: `/${RouteNames.books}/all}`,
-        element: <Books />
+        element: <BooksPage />
       },
       {
         path: `/${RouteNames.books}/:category`,
-        element: <Books />
+        element: <BooksPage />
       },
       {
         path: `/${RouteNames.books}/:category/:bookId`,
@@ -35,11 +34,11 @@ const router = createHashRouter([
       },
       {
         path: `/${RouteNames.terms}`,
-        element: <Terms />
+        element: <TermsPage />
       },
       {
         path: `/${RouteNames.contract}`,
-        element: <Contract />
+        element: <ContractPage />
       }
     ]
   }

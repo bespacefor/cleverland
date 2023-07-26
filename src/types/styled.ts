@@ -39,6 +39,7 @@ export interface ITheme {
     subtitleSmall: string;
     bodyLarge: string;
     bodySmall: string;
+    span: string;
     infoLarge: string;
     infoSmall: string;
     buttonLarge: string;

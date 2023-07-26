@@ -4,7 +4,7 @@ import { ListContainer } from './terms.style';
 
 import { TermsAndContractContainer } from '../components/container';
 
-export const Terms: FC = () => (
+export const TermsPage: FC = () => (
   <TermsAndContractContainer>
     <ListContainer>
       <h5>Правила пользования</h5>

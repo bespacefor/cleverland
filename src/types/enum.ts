@@ -43,3 +43,22 @@ export enum ButtonType {
   primaryButton = 'primaryButton',
   secondaryButton = 'secondaryButton'
 }
+
+export enum BookSectionTitle {
+  about = 'О книге',
+  rating = 'Рейтинг',
+  details = 'Подробная информация',
+  comments = 'Отзывы'
+}
+
+export enum DetailsTitles {
+  publishingHouse = 'Издательство',
+  publishingYear = 'Год издания',
+  pages = 'Страниц',
+  cover = 'Переплёт',
+  format = 'Формат',
+  genre = 'Жанр',
+  weight = 'Вес',
+  ISBN = 'ISBN',
+  producer = 'Изготовитель'
+}

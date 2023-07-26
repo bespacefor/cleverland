@@ -1,18 +1,18 @@
-import React, { FC, useCallback } from 'react';
+import { FC, useCallback } from 'react';
 
-import { Container } from './book-rating.style';
+import { Container } from './stars-rating.style';
 
 import { StarOutline } from 'assets/icons';
 import { baseTheme } from 'styles/theme';
 import { TextPlaceholder } from 'types/enum';
 import { keyExtractor } from 'utils/key-extractor';
 
-type BookRatingProps = {
+type StarsRatingProps = {
   rating?: number;
   stylesClass?: string;
 };
 
-export const BookRating: FC<BookRatingProps> = ({ rating, stylesClass }) => {
+export const StarsRating: FC<StarsRatingProps> = ({ rating, stylesClass }) => {
   const renderStars = useCallback(() => {
     if (!rating) return <p>{TextPlaceholder.noRatings}</p>;
 

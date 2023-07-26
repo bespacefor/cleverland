@@ -42,6 +42,7 @@ export const baseTheme: ITheme = {
     subtitleSmall: '600 14px/18px Montserrat',
     bodyLarge: '400 16px/24px Montserrat',
     bodySmall: '400 14px/18px Montserrat',
+    span: '400 14px/24px Montserrat',
     infoLarge: '500 12px/16px Montserrat',
     infoSmall: '400 12px/16px Montserrat',
     buttonLarge: '600 16px/24px Montserrat',
