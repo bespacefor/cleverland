@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
     width: 640px;
     margin: 0 auto;
   }
-  @media ${({ theme }) => theme.media.tablet} {
+  @media ${({ theme }) => theme.media.mobile} {
     width: 288px;
     margin: 0 auto;
   }
