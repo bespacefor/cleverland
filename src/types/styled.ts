@@ -3,6 +3,7 @@ export interface ITheme {
     main: {
       accent: string;
       white: string;
+      carrot: string;
       dark: string;
       dark30: string;
       hover: string;

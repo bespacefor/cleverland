@@ -1,3 +1,20 @@
+import { BookCategory, RouteNames } from './enum';
+
+export type NavMenuItemList = {
+  listTitle: string;
+  entries: Array<{
+    name: string;
+    category: BookCategory;
+    count: number;
+  }>;
+};
+
+export type NavMenuItem = {
+  route: RouteNames;
+  title: string;
+  list?: NavMenuItemList;
+};
+
 export type UserDTO = {
   name: string;
   avatar?: string;

@@ -5,6 +5,7 @@ export const baseTheme: ITheme = {
     main: {
       accent: '#FF5253',
       white: '#FFFFFF',
+      carrot: '#F85000',
       dark: '#363636',
       dark30: '#3636364D',
       hover: 'FF740F',
