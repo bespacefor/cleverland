@@ -4,16 +4,16 @@ import { Container } from './stars-rating.style';
 
 import { StarOutline } from 'assets/icons';
 import { baseTheme } from 'styles/theme';
-import { TextPlaceholder } from 'types/enum';
+import { StarsRatingVariant } from 'types/enum';
 import { keyExtractor } from 'utils/key-extractor';
 
 type StarsRatingProps = {
   rating?: number;
-  stylesClass?: string;
+  variant?: StarsRatingVariant;
   showEmptyStars?: boolean;
 };
 
-export const StarsRating: FC<StarsRatingProps> = ({ rating, stylesClass, showEmptyStars = true }) => {
+export const StarsRating: FC<StarsRatingProps> = ({ rating, variant = '', showEmptyStars = true }) => {
   const renderStars = useCallback(() => {
     const starFill = (index: number) => {
       if (index < Math.round(rating!)) {
@@ -26,5 +26,5 @@ export const StarsRating: FC<StarsRatingProps> = ({ rating, stylesClass, showEmp
     return [...Array(5)].map((_, index) => <StarOutline fill={starFill(index)} key={keyExtractor(index)} />);
   }, [rating]);
 
-  return <Container className={stylesClass}>{renderStars()}</Container>;
+  return <Container variant={variant}>{renderStars()}</Container>;
 };

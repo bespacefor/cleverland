@@ -14,10 +14,12 @@ type BooksListProps = {
 };
 
 export const BooksList: FC<BooksListProps> = ({ books, view }) => {
-  const ViewContainer = useMemo(() => (view === ViewVariant.tiles ? TilesView : ListView), [view]);
+  const ViewContainer = useMemo(() => {
+    return view === ViewVariant.tiles ? TilesView : ListView;
+  }, [view]);
 
   return (
-    <ViewContainer className={view}>
+    <ViewContainer>
       {books.map((book: BookDTO) => (
         <BookCard key={keyExtractor(book.id)} book={book} view={view} />
       ))}

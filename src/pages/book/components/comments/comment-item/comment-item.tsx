@@ -5,19 +5,16 @@ import { CommentContainer, ShortInfoContainer, CommentText, UserNameAndDate } fr
 import { avatarPlaceholder } from 'assets/images';
 import { Avatar } from 'components/avatar';
 import { StarsRating } from 'components/stars-rating';
+import { StarsRatingVariant } from 'types/enum';
 import { CommentDTO } from 'types/types';
+import { formatPostDate } from 'utils/format-post-date';
 
 type CommentItemProps = {
   comment: CommentDTO;
 };
 
 export const CommentItem: FC<CommentItemProps> = ({ comment }) => {
-  const formattedPublicationDate = new Date(comment.publicationDate).toLocaleDateString('ru', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
-
+  const formattedDate = formatPostDate(new Date(comment.publicationDate));
   return (
     <CommentContainer>
       <ShortInfoContainer>
@@ -26,10 +23,10 @@ export const CommentItem: FC<CommentItemProps> = ({ comment }) => {
           <p>
             {comment.firstName} {comment.lastName}
           </p>
-          <p>{formattedPublicationDate}</p>
+          <p>{formattedDate}</p>
         </UserNameAndDate>
       </ShortInfoContainer>
-      <StarsRating rating={comment.rating} stylesClass='ratingInComments' />
+      <StarsRating rating={comment.rating} variant={StarsRatingVariant.commentItem} />
       {comment.commentText && <CommentText>{comment.commentText}</CommentText>}
     </CommentContainer>
   );

@@ -62,3 +62,9 @@ export enum DetailsTitles {
   ISBN = 'ISBN',
   manufacturer = 'Изготовитель'
 }
+
+export enum StarsRatingVariant {
+  bookRating = 'bookRating',
+  commentItem = 'commentItem',
+  bookCard = 'bookCard'
+}

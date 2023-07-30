@@ -8,18 +8,6 @@ export const CommentContainer = styled.div`
   @media ${({ theme }) => theme.media.mobile} {
     gap: 8px;
   }
-  & .ratingInComments {
-    gap: 16px;
-    @media ${({ theme }) => theme.media.mobile} {
-      gap: 8px;
-    }
-    & svg {
-      @media ${({ theme }) => theme.media.mobile} {
-        width: 24px;
-        height: 24px;
-      }
-    }
-  }
 `;
 
 export const ShortInfoContainer = styled.div`

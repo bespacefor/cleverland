@@ -8,6 +8,7 @@ import { CategoriesListItem } from '../categories-list-item';
 
 import { BookCategory } from 'types/enum';
 import { NavMenuItemList } from 'types/types';
+import { keyExtractor } from 'utils/key-extractor';
 
 type CategoriesListProps = {
   list: NavMenuItemList;
@@ -19,7 +20,11 @@ export const CategoriesList: FC<CategoriesListProps> = ({ list }) => {
 
   const renderItemList = useCallback(() => {
     return list?.entries.map((item) => (
-      <CategoriesListItem key={item.category} item={item} $isActiveCategory={activeCategory === item.category} />
+      <CategoriesListItem
+        key={keyExtractor(item.category)}
+        item={item}
+        $isActiveCategory={activeCategory === item.category}
+      />
     ));
   }, [list?.entries, activeCategory]);
 

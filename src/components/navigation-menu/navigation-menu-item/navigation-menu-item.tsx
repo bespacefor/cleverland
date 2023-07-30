@@ -1,5 +1,4 @@
 import { FC } from 'react';
-import { NavLink } from 'react-router-dom';
 
 import { CurrentActiveLink, NavigationMenuPoint } from './navigation-menu-item.style';
 
@@ -22,13 +21,17 @@ export const NavigationMenuItem: FC<NavMenuItemProps> = ({
   activeRoute,
   isCategoriesListOpen,
   setIsCategoriesListOpen
-}) => (
-  <NavigationMenuPoint>
-    <CurrentActiveLink onClick={() => onClickRoute(item.route)}>
-      <NavLink to={`/${item.route}`} className={({ isActive }) => (isActive ? 'active mainLink' : 'mainLink')}>
+}) => {
+  const isActive = activeRoute === item.route;
+
+  return (
+    <NavigationMenuPoint>
+      <CurrentActiveLink to={`/${item.route}`} $isActive={isActive} onClick={() => onClickRoute(item.route)}>
         {item.title}
-      </NavLink>
-    </CurrentActiveLink>
-    {item.list && activeRoute === RouteNames.books && isCategoriesListOpen && <CategoriesList list={item.list} />}
-  </NavigationMenuPoint>
-);
+      </CurrentActiveLink>
+      {item.list && isActive && activeRoute === RouteNames.books && isCategoriesListOpen && (
+        <CategoriesList list={item.list} />
+      )}
+    </NavigationMenuPoint>
+  );
+};

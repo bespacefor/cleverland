@@ -8,6 +8,6 @@ type AvatarProps = {
   background: string;
 };
 
-export const Avatar: FC<AvatarProps> = ({ size, background }) => {
-  return <AvatarContainer size={size} $background={background} />;
-};
+export const Avatar: FC<AvatarProps> = ({ size, background }) => (
+  <AvatarContainer size={size} $background={background} />
+);

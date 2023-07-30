@@ -103,20 +103,4 @@ export const ListButtonContainer = styled.div`
       max-width: 100%;
     }
   }
-  .ratingListCard {
-    @media ${({ theme }) => theme.media.mobile} {
-      gap: 8px;
-    }
-    & p {
-      @media ${({ theme }) => theme.media.mobile} {
-        font: ${({ theme }) => theme.fonts.mobileBodySmall};
-      }
-    }
-    & svg {
-      @media ${({ theme }) => theme.media.mobile} {
-        width: 14px;
-        height: 14px;
-      }
-    }
-  }
 `;

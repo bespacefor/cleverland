@@ -1,3 +1,4 @@
+import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const NavigationMenuPoint = styled.li`
@@ -7,7 +8,7 @@ export const NavigationMenuPoint = styled.li`
   position: relative;
 `;
 
-export const CurrentActiveLink = styled.div`
+export const CurrentActiveLink = styled(NavLink)<{ $isActive: boolean }>`
   position: relative;
   width: 255px;
   svg {
@@ -18,25 +19,22 @@ export const CurrentActiveLink = styled.div`
       fill: ${({ theme }) => theme.colors.button.hover};
     }
   }
-  & .mainLink {
-    &::after {
-      display: flex;
-      position: absolute;
-      content: '';
-      height: 1px;
-      background: ${({ theme }) => theme.colors.button.hover};
-      top: 38px;
-      left: 0;
-      right: 0;
-      width: 0%;
-      transition: 0.5s linear;
-    }
-    &.active {
-      position: relative;
-      color: ${({ theme }) => theme.colors.main.carrot};
-      &::after {
-        width: 90%;
-      }
-    }
+
+  &::after {
+    display: flex;
+    position: absolute;
+    content: '';
+    height: 1px;
+    background: ${({ theme }) => theme.colors.button.hover};
+    top: 38px;
+    left: 0;
+    right: 0;
+    width: ${({ $isActive }) => ($isActive ? '90%' : '0%')};
+    transition: 0.5s linear;
+  }
+
+  &.active {
+    position: relative;
+    color: ${({ theme }) => theme.colors.main.carrot};
   }
 `;

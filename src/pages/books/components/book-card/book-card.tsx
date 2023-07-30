@@ -9,7 +9,7 @@ import { TileAbout, TileBookInfo, TileButtonContainer } from './tile-card.styles
 import { CoverPlaceholder } from 'assets/icons';
 import { PrimaryButton } from 'components/buttons/primary-button';
 import { StarsRating } from 'components/stars-rating';
-import { RouteNames, TextPlaceholder, ViewVariant } from 'types/enum';
+import { RouteNames, StarsRatingVariant, TextPlaceholder, ViewVariant } from 'types/enum';
 import { BookDTO } from 'types/types';
 import { getButtonStyles } from 'utils/get-button-styles';
 
@@ -33,7 +33,7 @@ export const BookCard: FC<BookProps> = ({
           {view === ViewVariant.tiles ? (
             <TileBookInfo>
               {rating ? (
-                <StarsRating rating={rating} stylesClass='ratingListCard' showEmptyStars={false} />
+                <StarsRating rating={rating} variant={StarsRatingVariant.bookCard} showEmptyStars={false} />
               ) : (
                 <p>{TextPlaceholder.noRatings}</p>
               )}
@@ -53,7 +53,7 @@ export const BookCard: FC<BookProps> = ({
               </ListAbout>
               <ListButtonContainer>
                 {rating ? (
-                  <StarsRating rating={rating} stylesClass='ratingListCard' showEmptyStars={false} />
+                  <StarsRating rating={rating} variant={StarsRatingVariant.bookCard} showEmptyStars={false} />
                 ) : (
                   <p>{TextPlaceholder.noRatings}</p>
                 )}

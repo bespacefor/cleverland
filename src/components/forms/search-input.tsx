@@ -15,45 +15,49 @@ const SearchInputContainer = styled.div`
   @media ${({ theme }) => theme.media.tablet} {
     width: 274px;
   }
-  & input {
-    width: 100%;
-    height: 100%;
-    outline: none;
-    font: ${({ theme }) => theme.fonts.bodySmall};
-    letter-spacing: 0.1px;
-    padding-left: 25px;
-    border: none;
-    &:focus {
-      & ~ .searchIcon {
-        path {
-          fill: ${({ theme }) => theme.colors.main.accent};
-        }
-      }
-    }
-  }
-  & .searchIcon {
-    position: absolute;
-    top: 10px;
-    left: 16px;
-    width: 16px;
-    height: 16px;
-    path {
-      fill: ${({ theme }) => theme.colors.grey.black40};
-    }
-  }
-  & .searchCancelIcon {
-    position: absolute;
-    top: 10px;
-    right: 16px;
-    width: 16px;
-    height: 16px;
-    path {
-      fill: ${({ theme }) => theme.colors.main.accent};
-    }
-  }
   &:hover {
     border: ${({ theme }) => `1px solid ${theme.colors.main.hover}`};
     box-shadow: ${({ theme }) => theme.colors.shadow.button};
+  }
+`;
+
+const Input = styled.input`
+  width: 100%;
+  height: 100%;
+  outline: none;
+  font: ${({ theme }) => theme.fonts.bodySmall};
+  letter-spacing: 0.1px;
+  padding-left: 25px;
+  border: none;
+
+  &:focus {
+    ~ .searchIcon {
+      path {
+        fill: ${({ theme }) => theme.colors.main.accent};
+      }
+    }
+  }
+`;
+
+const SearchIcon = styled(Search)`
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  width: 16px;
+  height: 16px;
+  path {
+    fill: ${({ theme }) => theme.colors.grey.black40};
+  }
+`;
+
+const SearchCancelIcon = styled(Close)`
+  position: absolute;
+  top: 10px;
+  right: 16px;
+  width: 16px;
+  height: 16px;
+  path {
+    fill: ${({ theme }) => theme.colors.main.accent};
   }
 `;
 
@@ -67,7 +71,7 @@ export const SearchInput: FC = () => {
 
   return (
     <SearchInputContainer>
-      <input
+      <Input
         type='text'
         onChange={changeText}
         value={currentValue}
@@ -75,8 +79,8 @@ export const SearchInput: FC = () => {
         onBlur={() => setBlur(true)}
         placeholder={TextPlaceholder.searching}
       />
-      <Search className='searchIcon' />
-      {!blur && <Close className='searchCancelIcon' />}
+      <SearchIcon />
+      {!blur && <SearchCancelIcon />}
     </SearchInputContainer>
   );
 };

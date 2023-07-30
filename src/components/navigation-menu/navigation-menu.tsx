@@ -6,6 +6,7 @@ import { BurgerMenuContainer, NavigationMenuContainer } from './navigation-menu.
 import { NAVIGATION_MENU_LIST } from 'consts';
 import { RouteNames } from 'types/enum';
 import { NavMenuItem } from 'types/types';
+import { keyExtractor } from 'utils/key-extractor';
 
 type NavigationMenuProps = {
   isBurgerMenu: boolean;
@@ -36,7 +37,7 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({ isBurgerMenu, $isVisib
     () =>
       navMenu.map((item) => (
         <NavigationMenuItem
-          key={item.route}
+          key={keyExtractor(item.route)}
           item={item}
           onClickRoute={onClickRoute}
           activeRoute={activeRoute}
