@@ -1,0 +1,16 @@
+export { ReactComponent as Close } from './close.svg';
+export { ReactComponent as CoverPlaceholder } from './coverPlaceholder.svg';
+export { ReactComponent as Down } from './down.svg';
+export { ReactComponent as Facebook } from './facebook.svg';
+export { ReactComponent as Instagram } from './instagram.svg';
+export { ReactComponent as Linkedin } from './linkedin.svg';
+export { ReactComponent as Logo } from './logo.svg';
+export { ReactComponent as MenuList } from './menuList.svg';
+export { ReactComponent as Search } from './search.svg';
+export { ReactComponent as SortDown } from './sortDown.svg';
+export { ReactComponent as SortUp } from './sortUp.svg';
+export { ReactComponent as MenuTiles } from './menuTiles.svg';
+export { ReactComponent as Star } from './star.svg';
+export { ReactComponent as StarOutline } from './starOutline.svg';
+export { ReactComponent as Up } from './up.svg';
+export { ReactComponent as Vk } from './vk.svg';
