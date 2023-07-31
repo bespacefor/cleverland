@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useCallback } from 'react';
 
 import { CurrentActiveLink, NavigationMenuPoint } from './navigation-menu-item.style';
 
@@ -23,15 +23,18 @@ export const NavigationMenuItem: FC<NavMenuItemProps> = ({
   setIsCategoriesListOpen
 }) => {
   const isActive = activeRoute === item.route;
+  const onClickRouteHandler = useCallback(() => {
+    onClickRoute(item.route);
+  }, [onClickRoute, item.route]);
+
+  const shouldRenderCategoriesList = item.list && isActive && activeRoute === RouteNames.books && isCategoriesListOpen;
 
   return (
     <NavigationMenuPoint>
-      <CurrentActiveLink to={`/${item.route}`} $isActive={isActive} onClick={() => onClickRoute(item.route)}>
+      <CurrentActiveLink to={`/${item.route}`} $isActive={isActive} onClick={onClickRouteHandler}>
         {item.title}
       </CurrentActiveLink>
-      {item.list && isActive && activeRoute === RouteNames.books && isCategoriesListOpen && (
-        <CategoriesList list={item.list} />
-      )}
+      {shouldRenderCategoriesList && <CategoriesList list={item.list} />}
     </NavigationMenuPoint>
   );
 };

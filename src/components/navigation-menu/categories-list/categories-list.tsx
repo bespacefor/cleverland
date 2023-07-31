@@ -1,4 +1,4 @@
-import { FC, useCallback } from 'react';
+import { FC } from 'react';
 
 import { useLocation } from 'react-router-dom';
 
@@ -11,28 +11,26 @@ import { NavMenuItemList } from 'types/types';
 import { keyExtractor } from 'utils/key-extractor';
 
 type CategoriesListProps = {
-  list: NavMenuItemList;
+  list?: NavMenuItemList;
 };
 
 export const CategoriesList: FC<CategoriesListProps> = ({ list }) => {
   const location = useLocation();
   const activeCategory = location.pathname.split('/')[2] as BookCategory;
 
-  const renderItemList = useCallback(() => {
-    return list?.entries.map((item) => (
-      <CategoriesListItem
-        key={keyExtractor(item.category)}
-        item={item}
-        $isActiveCategory={activeCategory === item.category}
-      />
-    ));
-  }, [list?.entries, activeCategory]);
-
   return (
     <BooksCategoriesList>
       <li>
         {list?.listTitle}
-        <ul>{renderItemList()}</ul>
+        <ul>
+          {list?.entries?.map((item) => (
+            <CategoriesListItem
+              key={keyExtractor(item.category)}
+              item={item}
+              $isActiveCategory={activeCategory === item.category}
+            />
+          ))}
+        </ul>
       </li>
     </BooksCategoriesList>
   );

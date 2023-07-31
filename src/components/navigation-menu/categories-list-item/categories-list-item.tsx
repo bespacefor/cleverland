@@ -14,10 +14,13 @@ type CategoriesItemProps = {
   $isActiveCategory: boolean;
 };
 
-export const CategoriesListItem: FC<CategoriesItemProps> = ({ item, $isActiveCategory }) => (
+export const CategoriesListItem: FC<CategoriesItemProps> = ({
+  item: { name, count = 0, category },
+  $isActiveCategory
+}) => (
   <CategoriesListPoint $isActive={$isActiveCategory}>
-    <NavLink to={`/${RouteNames.books}/${item.category}`}>
-      {item.name} <span>{item.count}</span>
+    <NavLink to={`/${RouteNames.books}/${category}`}>
+      {name} <span>{count}</span>
     </NavLink>
   </CategoriesListPoint>
 );

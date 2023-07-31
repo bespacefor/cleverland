@@ -21,7 +21,7 @@ export const BookSectionLayout: FC<LayoutProps> = ({
 }) => (
   <div>
     <BookSectionTitle $paddingOnMobile={paddingOnMobile}>
-      {title} {amount !== undefined && <span>{amount}</span>}
+      {title} {amount && <span>{amount}</span>}
     </BookSectionTitle>
     {withSeparator && <SeparatorLine />}
     {children}

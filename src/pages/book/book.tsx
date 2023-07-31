@@ -28,7 +28,7 @@ export const BookPage: FC = () => {
       <BookContainer>
         <BookMainInfo book={currentBook} />
         <AdditionalInfo>
-          <BookRating rating={currentBook.rating!} />
+          <BookRating rating={currentBook.rating} />
           <BookDetails book={currentBook} />
           <Comments comments={comments} />
         </AdditionalInfo>

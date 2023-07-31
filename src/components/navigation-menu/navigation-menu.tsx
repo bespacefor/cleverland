@@ -27,25 +27,10 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({ isBurgerMenu, $isVisib
     (route: RouteNames) => {
       setActiveRoute(route);
       if (activeRoute === RouteNames.books) {
-        setIsCategoriesListOpen((prev) => !prev);
+        setIsCategoriesListOpen(!isCategoriesListOpen);
       }
     },
-    [activeRoute]
-  );
-
-  const renderMenu = useCallback(
-    () =>
-      navMenu.map((item) => (
-        <NavigationMenuItem
-          key={keyExtractor(item.route)}
-          item={item}
-          onClickRoute={onClickRoute}
-          activeRoute={activeRoute}
-          isCategoriesListOpen={isCategoriesListOpen}
-          setIsCategoriesListOpen={setIsCategoriesListOpen}
-        />
-      )),
-    [activeRoute, isCategoriesListOpen, navMenu, onClickRoute]
+    [activeRoute, isCategoriesListOpen]
   );
 
   const menuClickHandler = useCallback(() => {
@@ -58,7 +43,18 @@ export const NavigationMenu: FC<NavigationMenuProps> = ({ isBurgerMenu, $isVisib
 
   return (
     <StyledComponent $isVisible={$isVisible} onClick={menuClickHandler}>
-      <ul>{renderMenu()}</ul>
+      <ul>
+        {navMenu.map((item) => (
+          <NavigationMenuItem
+            key={keyExtractor(item.route)}
+            item={item}
+            onClickRoute={onClickRoute}
+            activeRoute={activeRoute}
+            isCategoriesListOpen={isCategoriesListOpen}
+            setIsCategoriesListOpen={setIsCategoriesListOpen}
+          />
+        ))}
+      </ul>
     </StyledComponent>
   );
 };

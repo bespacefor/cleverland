@@ -1,7 +1,6 @@
-import { FC } from 'react';
 import styled from 'styled-components';
 
-const SeparatorContainer = styled.div`
+export const SeparatorLine = styled.div`
   background-color: ${({ theme }) => theme.colors.grey.black42};
   height: 1px;
   width: 350px;
@@ -14,5 +13,3 @@ const SeparatorContainer = styled.div`
     margin: 8px 0;
   }
 `;
-
-export const SeparatorLine: FC = () => <SeparatorContainer />;
