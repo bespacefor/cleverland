@@ -23,9 +23,9 @@ export const NavigationMenuItem: FC<NavMenuItemProps> = ({
   setIsCategoriesListOpen
 }) => {
   const isActive = activeRoute === item.route;
-  const onClickRouteHandler = useCallback(() => {
+  const onClickRouteHandler = () => {
     onClickRoute(item.route);
-  }, [onClickRoute, item.route]);
+  };
 
   const shouldRenderCategoriesList = item.list && isActive && activeRoute === RouteNames.books && isCategoriesListOpen;
 

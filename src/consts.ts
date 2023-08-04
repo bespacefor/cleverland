@@ -110,3 +110,8 @@ export const SOCIAL_MEDIA_LIST = [
     icon: Linkedin
   }
 ];
+
+export const windowSizes = {
+  laptop: 1024,
+  tablet: 768
+};

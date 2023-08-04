@@ -23,7 +23,7 @@ export type UserDTO = {
 export type BookDTO = {
   id: number;
   category: string;
-  image?: string;
+  image?: string[];
   title: string;
   author: string;
   isBooked: boolean;
