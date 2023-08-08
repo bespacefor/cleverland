@@ -1,8 +1,8 @@
 import { FC } from 'react';
 
-import { SwiperLaptop } from './swiper-laptop';
+import { LaptopSlider } from './components/laptop-slider';
 
-import { SwiperTablet } from './swiper-tablet';
+import { TabletSlider } from './components/tablet-slider';
 
 import { windowSizes } from 'consts';
 import { useWindowSize } from 'hooks/use-window-size';
@@ -17,5 +17,5 @@ export const Slider: FC<{ images: string[] }> = ({ images }) => {
   const { width } = useWindowSize();
   const isSmallScreen = width && width <= windowSizes.tablet;
 
-  return isSmallScreen ? <SwiperTablet images={images} /> : <SwiperLaptop images={images} />;
+  return isSmallScreen ? <TabletSlider images={images} /> : <LaptopSlider images={images} />;
 };

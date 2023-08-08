@@ -2,17 +2,14 @@ import { FC } from 'react';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import { ImageContainer } from './slider.style';
+import { ImageContainer } from '../slider.style';
 
 import { keyExtractor } from 'utils/key-extractor';
 
 import 'swiper/css';
-import 'swiper/css/free-mode';
-import 'swiper/css/navigation';
-import 'swiper/css/thumbs';
 import 'swiper/css/pagination';
 
-export const SwiperTablet: FC<{ images: string[] }> = ({ images }) => (
+export const TabletSlider: FC<{ images: string[] }> = ({ images }) => (
   <ImageContainer>
     <Swiper
       spaceBetween='30'
@@ -20,7 +17,7 @@ export const SwiperTablet: FC<{ images: string[] }> = ({ images }) => (
         clickable: true
       }}
       modules={[Pagination]}
-      className='images-slider-small'
+      className='dotted-slider'
     >
       {images.map((item, index) => (
         <SwiperSlide key={keyExtractor(index)}>

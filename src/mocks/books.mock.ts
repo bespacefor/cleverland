@@ -6,7 +6,7 @@ export const MOCK_BOOKS: BookDTO[] = [
   {
     id: 0,
     category: BookCategory.computer,
-    image: [book1, book4, book5, book6],
+    image: [book1, book4, book5, book6, book1, book4, book5, book6],
     title: 'Грокаем алгоритмы. Иллюстрированное пособие для программистов и любопытствующих',
     author: 'Адитья Бхаргава, 2019',
     isBooked: false,
@@ -40,7 +40,7 @@ export const MOCK_BOOKS: BookDTO[] = [
   {
     id: 3,
     category: BookCategory.childish,
-    image: [book2, book4, book5, book6],
+    image: [book2, book4],
     title: 'HTML5 и CSS3. Разработка сайтов для любых браузеров и устройств',
     author: 'Бен Фрейн, 2014',
     isBooked: true,
@@ -62,7 +62,7 @@ export const MOCK_BOOKS: BookDTO[] = [
   {
     id: 5,
     category: BookCategory.manuals,
-    image: [book6, book3, book4, book5, book6],
+    image: [book6, book3, book4, book5, book6, book6, book3, book4],
     title: 'Грокаем алгоритмы. Иллюстрированное пособие',
     author: '2019',
     isBooked: false,
@@ -73,7 +73,7 @@ export const MOCK_BOOKS: BookDTO[] = [
   {
     id: 6,
     category: BookCategory.science,
-    image: [book4, book4, book5, book6],
+    image: [book4, book5, book6],
     title: 'HTML5. Разработка приложений для мобильных устройств',
     author: '	Эстель Вейл, 2015',
     isBooked: true,
@@ -96,7 +96,7 @@ export const MOCK_BOOKS: BookDTO[] = [
   {
     id: 8,
     category: BookCategory.classic,
-    image: [book5, book2, book4, book5, book6],
+    image: [book5, book2],
     title: 'Грокаем алгоритмы. Иллюстрированное пособие для программистов и любопытствующих',
     author: 'Борис Пахомов, 2014',
     isBooked: false,

@@ -9,13 +9,6 @@ export const ImageContainer = styled.div`
   grid-row-start: 1;
   grid-row-end: 3;
 
-  @media ${({ theme }) => theme.media.mobile} {
-    grid-column-start: 1;
-    grid-column-end: 2;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-
   @media ${({ theme }) => theme.media.tablet} {
     grid-row-end: 2;
     width: 136px;
@@ -28,7 +21,7 @@ export const ImageContainer = styled.div`
     height: 300px;
     border-radius: 10px;
   }
-  & .images-slider {
+  & .preview-main {
     height: 594px;
     .swiper-slide {
       border-radius: 10px;
@@ -43,14 +36,14 @@ export const ImageContainer = styled.div`
       }
     }
   }
-  & .images-slider-thumbs {
+  & .preview-mini {
     height: 86px;
     margin-top: 16px;
     .swiper-slide {
       width: 19% !important;
       cursor: pointer;
       &-thumb-active {
-        .images-slider-thumbs-wrapper {
+        .preview-mini-wrapper {
           border-color: ${({ theme }) => theme.colors.main.carrot};
         }
       }
@@ -70,7 +63,7 @@ export const ImageContainer = styled.div`
       }
     }
   }
-  & .images-slider-small {
+  & .dotted-slider {
     @media ${({ theme }) => theme.media.tablet} {
       text-align: center;
       display: flex;
@@ -95,6 +88,7 @@ export const ImageContainer = styled.div`
       margin-top: 25px;
       &-bullet-active {
         background-color: ${({ theme }) => theme.colors.main.dark};
+        scale: 1.3;
       }
     }
     img {
