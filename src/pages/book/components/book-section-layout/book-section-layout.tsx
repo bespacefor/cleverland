@@ -1,29 +1,43 @@
-import { FC, ReactNode } from 'react';
+import { FC, ReactNode, useCallback, useMemo, useState } from 'react';
 
 import { BookSectionTitle } from './book-section-layout.style';
 
+import { Up, Down } from 'assets/icons';
 import { SeparatorLine } from 'components/separator-line/separator-line';
 
-type LayoutProps = {
+type BookSectionLayoutProps = {
   title: string;
   amount?: number;
-  withSeparator?: boolean;
+  showSeparator?: boolean;
   children: ReactNode;
   paddingOnMobile?: boolean;
+  showArrow?: boolean;
 };
 
-export const BookSectionLayout: FC<LayoutProps> = ({
+export const BookSectionLayout: FC<BookSectionLayoutProps> = ({
   title,
   amount,
-  withSeparator = true,
+  showSeparator = true,
   children,
-  paddingOnMobile = false
-}) => (
-  <div>
-    <BookSectionTitle $paddingOnMobile={paddingOnMobile}>
-      {title} {amount && <span>{amount}</span>}
-    </BookSectionTitle>
-    {withSeparator && <SeparatorLine />}
-    {children}
-  </div>
-);
+  paddingOnMobile = false,
+  showArrow = false
+}) => {
+  const [isSectionOpen, setIsSectionOpen] = useState<boolean>(true);
+  const ArrowIcon = useMemo(() => (isSectionOpen ? Up : Down), [isSectionOpen]);
+
+  const toggleSection = useCallback(() => {
+    if (showArrow) {
+      setIsSectionOpen(!isSectionOpen);
+    }
+  }, [isSectionOpen, showArrow]);
+
+  return (
+    <div>
+      <BookSectionTitle $paddingOnMobile={paddingOnMobile} onClick={toggleSection}>
+        {title} <span>{amount}</span> {showArrow && <ArrowIcon />}
+      </BookSectionTitle>
+      {showSeparator && <SeparatorLine />}
+      {isSectionOpen && children}
+    </div>
+  );
+};

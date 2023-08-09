@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 type ButtonsContainerProps = {
-  $isVisibleMobile: boolean;
+  $isSearchOpen: boolean;
 };
 
 export const FilterListContainer = styled.div`
@@ -11,16 +11,20 @@ export const FilterListContainer = styled.div`
   justify-content: space-between;
 `;
 
-export const DefaultButtonsContainer = styled.div`
+export const DefaultButtonsContainer = styled.div<ButtonsContainerProps>`
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 16px;
+  @media ${({ theme }) => theme.media.mobile} {
+    display: ${(props) => (props.$isSearchOpen ? 'none' : 'flex')};
+  }
 `;
 
 export const ButtonsContainer = styled(DefaultButtonsContainer)<ButtonsContainerProps>`
-  display: ${(props) => (props.$isVisibleMobile ? 'none' : 'flex')};
+  display: flex;
   @media ${({ theme }) => theme.media.mobile} {
-    display: ${(props) => (props.$isVisibleMobile ? 'flex' : 'none')};
+    display: flex;
+    gap: ${(props) => (props.$isSearchOpen ? 0 : '16px')};
   }
 `;
