@@ -1,6 +1,7 @@
 import { BookCategory, RouteNames } from './enum';
 
 export type NavMenuItemList = {
+  route: RouteNames;
   listTitle: string;
   entries: Array<{
     name: string;
@@ -10,6 +11,7 @@ export type NavMenuItemList = {
 };
 
 export type NavMenuItem = {
+  isMobileOnly: boolean;
   route: RouteNames;
   title: string;
   list?: NavMenuItemList;

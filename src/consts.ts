@@ -4,9 +4,11 @@ import { NavMenuItem } from 'types/types';
 
 export const NAVIGATION_MENU_LIST: NavMenuItem[] = [
   {
+    isMobileOnly: false,
     route: RouteNames.books,
     title: 'Витрина книг',
     list: {
+      route: RouteNames.booksAll,
       listTitle: 'Все книги',
       entries: [
         {
@@ -83,12 +85,24 @@ export const NAVIGATION_MENU_LIST: NavMenuItem[] = [
     }
   },
   {
+    isMobileOnly: false,
     route: RouteNames.terms,
     title: 'Правила пользования'
   },
   {
+    isMobileOnly: false,
     route: RouteNames.contract,
     title: 'Договор оферты'
+  },
+  {
+    isMobileOnly: true,
+    route: RouteNames.profile,
+    title: 'Профиль'
+  },
+  {
+    isMobileOnly: true,
+    route: RouteNames.exit,
+    title: 'Выход'
   }
 ];
 

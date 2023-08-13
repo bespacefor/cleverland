@@ -5,11 +5,8 @@ export const HeaderContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 32px;
-  @media ${({ theme }) => theme.media.tablet} {
-    margin-bottom: 22px;
-  }
   @media ${({ theme }) => theme.media.mobile} {
-    margin: 24px 0;
+    margin: 24px 0 32px 0;
   }
 `;
 
@@ -29,6 +26,20 @@ export const LogoContainer = styled.div`
   align-items: center;
   @media ${({ theme }) => theme.media.tablet} {
     display: none;
+  }
+`;
+
+export const BurgerMenuContainer = styled.div.attrs((_) => ({
+  id: 'burger'
+}))`
+  display: none;
+  width: 30px;
+  height: 30px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  @media ${({ theme }) => theme.media.tablet} {
+    display: flex;
   }
 `;
 
