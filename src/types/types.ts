@@ -11,7 +11,7 @@ export type NavMenuItemList = {
 };
 
 export type NavMenuItem = {
-  isMobileOnly: boolean;
+  isBurgerOnly: boolean;
   route: RouteNames;
   title: string;
   list?: NavMenuItemList;

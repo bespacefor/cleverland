@@ -4,7 +4,7 @@ import { NavMenuItem } from 'types/types';
 
 export const NAVIGATION_MENU_LIST: NavMenuItem[] = [
   {
-    isMobileOnly: false,
+    isBurgerOnly: false,
     route: RouteNames.books,
     title: 'Витрина книг',
     list: {
@@ -85,22 +85,22 @@ export const NAVIGATION_MENU_LIST: NavMenuItem[] = [
     }
   },
   {
-    isMobileOnly: false,
+    isBurgerOnly: false,
     route: RouteNames.terms,
     title: 'Правила пользования'
   },
   {
-    isMobileOnly: false,
+    isBurgerOnly: false,
     route: RouteNames.contract,
     title: 'Договор оферты'
   },
   {
-    isMobileOnly: true,
+    isBurgerOnly: true,
     route: RouteNames.profile,
     title: 'Профиль'
   },
   {
-    isMobileOnly: true,
+    isBurgerOnly: true,
     route: RouteNames.exit,
     title: 'Выход'
   }

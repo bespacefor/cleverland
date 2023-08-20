@@ -13,18 +13,18 @@ import { Wrapper } from 'styles/wrapper';
 import { RouteNames } from 'types/enum';
 
 export const Layout: FC = () => {
-  const bookpathMatch = useMatch(`/${RouteNames.books}/:category/:bookId`);
+  const bookPathMatch = useMatch(`/${RouteNames.books}/:category/:bookId`);
   const [isBurgerOpen, setIsBurgerOpen] = useState<boolean>(false);
   const closeOverlay = () => setIsBurgerOpen(!isBurgerOpen);
 
   return (
-    <LayoutContainer isMenuOpen={isBurgerOpen}>
-      <Overlay $isVisible={isBurgerOpen} onClick={closeOverlay} />
+    <LayoutContainer $isMenuOpen={isBurgerOpen}>
+      <Overlay $isOverlayVisible={isBurgerOpen} onClick={closeOverlay} />
       <Header user={MOCK_USER} isBurgerOpen={isBurgerOpen} setIsBurgerOpen={setIsBurgerOpen} />
-      {bookpathMatch && <Breadcrumbs />}
+      {bookPathMatch && <Breadcrumbs />}
       <Wrapper>
         <MainContentContainer>
-          {!bookpathMatch && <NavigationMenu isMobileMenu={false} />}
+          {!bookPathMatch && <NavigationMenu isBurgerMenu={false} />}
           <Outlet />
         </MainContentContainer>
       </Wrapper>

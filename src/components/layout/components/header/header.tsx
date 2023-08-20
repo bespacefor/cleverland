@@ -1,9 +1,9 @@
 import { FC, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 
-import { BurgerMenu } from './components/burger-menu';
+import { Burger } from './components/burger';
 import { HeaderAuthorization } from './components/header-authorization';
-import { HeaderContainer, LeftContainer, LogoContainer, BurgerMenuContainer, Title } from './header.style';
+import { HeaderContainer, LeftContainer, LogoContainer, BurgerContainer, Title } from './header.style';
 
 import { Logo } from 'assets/icons';
 import { NavigationMenu } from 'components/navigation-menu';
@@ -30,10 +30,10 @@ export const Header: FC<HeaderProps> = ({ user, isBurgerOpen, setIsBurgerOpen })
               <Logo />
             </LogoContainer>
           </Link>
-          <BurgerMenuContainer onClick={burgerIconHandler}>
-            <BurgerMenu isBurgerMenuOpen={isBurgerOpen} />
-            <NavigationMenu isMobileMenu={true} $isVisible={isBurgerOpen} setIsShowMenu={setIsBurgerOpen} />
-          </BurgerMenuContainer>
+          <BurgerContainer onClick={burgerIconHandler}>
+            <Burger isBurgerOpen={isBurgerOpen} />
+            <NavigationMenu isBurgerMenu={true} $isMenuVisible={isBurgerOpen} setIsShowMenu={setIsBurgerOpen} />
+          </BurgerContainer>
           <Title>Библиотека</Title>
         </LeftContainer>
         <HeaderAuthorization user={user} />

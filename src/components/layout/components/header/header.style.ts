@@ -29,9 +29,7 @@ export const LogoContainer = styled.div`
   }
 `;
 
-export const BurgerMenuContainer = styled.div.attrs((_) => ({
-  id: 'burger'
-}))`
+export const BurgerContainer = styled.div`
   display: none;
   width: 30px;
   height: 30px;
