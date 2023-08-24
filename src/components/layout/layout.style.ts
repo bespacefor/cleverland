@@ -1,14 +1,13 @@
 import styled from 'styled-components';
 
-export const LayoutContainer = styled.div<{ $isMenuOpen: boolean }>`
+export const LayoutContainer = styled.div<{ $isBurgerMenuOpen: boolean }>`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   height: 100vh;
   gap: 42px;
-  overflow: ${(props) => (props.$isMenuOpen ? 'hidden' : 'auto')};
-
+  overflow: ${(props) => (props.$isBurgerMenuOpen ? 'hidden' : 'auto')};
   @media ${({ theme }) => theme.media.tablet} {
     gap: 46px;
   }

@@ -1,4 +1,4 @@
-import { FC, useCallback } from 'react';
+import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
 import { Burger } from './components/burger';
@@ -17,9 +17,9 @@ type HeaderProps = {
 };
 
 export const Header: FC<HeaderProps> = ({ user, isBurgerOpen, setIsBurgerOpen }) => {
-  const burgerIconHandler = useCallback(() => {
+  const burgerIconHandler = () => {
     setIsBurgerOpen(!isBurgerOpen);
-  }, [isBurgerOpen, setIsBurgerOpen]);
+  };
 
   return (
     <Wrapper>
@@ -32,7 +32,7 @@ export const Header: FC<HeaderProps> = ({ user, isBurgerOpen, setIsBurgerOpen })
           </Link>
           <BurgerContainer onClick={burgerIconHandler}>
             <Burger isBurgerOpen={isBurgerOpen} />
-            <NavigationMenu isBurgerMenu={true} $isMenuVisible={isBurgerOpen} setIsShowMenu={setIsBurgerOpen} />
+            <NavigationMenu isBurgerMenu={true} $isMenuVisible={isBurgerOpen} setIsSubMenuVisible={setIsBurgerOpen} />
           </BurgerContainer>
           <Title>Библиотека</Title>
         </LeftContainer>

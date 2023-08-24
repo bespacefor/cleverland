@@ -1,33 +1,51 @@
 import { FC } from 'react';
 
-import { useLocation } from 'react-router-dom';
+import { NavLink, useLocation } from 'react-router-dom';
 
 import { BooksCategoriesList } from './categories-list.style';
 
 import { CategoriesListItem } from '../categories-list-item';
 
-import { BookCategory } from 'types/enum';
+import { BookCategory, RouteNames } from 'types/enum';
 import { NavMenuItemList } from 'types/types';
-import { keyExtractor } from 'utils/key-extractor';
 
 type CategoriesListProps = {
   list?: NavMenuItemList;
+  isListOpen: boolean;
+  onClickCategory: (e: React.SyntheticEvent) => void;
+  isBurgerMenu: boolean;
+  activeRoute: RouteNames;
 };
 
-export const CategoriesList: FC<CategoriesListProps> = ({ list }) => {
-  const location = useLocation();
-  const activeCategory = location.pathname.split('/')[2] as BookCategory;
+export const CategoriesList: FC<CategoriesListProps> = ({
+  list,
+  isListOpen,
+  onClickCategory,
+  isBurgerMenu,
+  activeRoute
+}) => {
+  const { pathname } = useLocation();
+  const activeCategory = pathname.split('/')[2] as BookCategory;
+  const isActiveAllBooks = pathname === '/' || pathname === `/${RouteNames.books}`;
 
   return (
-    <BooksCategoriesList>
+    <BooksCategoriesList $isListOpen={isListOpen}>
       <li>
-        {list?.listTitle}
+        <NavLink
+          to={`/${RouteNames.books}/${RouteNames.booksAll}`}
+          className={isActiveAllBooks ? 'active' : ''}
+          onClick={onClickCategory}
+        >
+          <span>{list?.listTitle}</span>
+        </NavLink>
         <ul>
-          {list?.entries?.map((item) => (
+          {list?.entries?.map((entry) => (
             <CategoriesListItem
-              key={keyExtractor(item.category)}
-              item={item}
-              $isActiveCategory={activeCategory === item.category}
+              key={entry.category}
+              item={entry}
+              $isActiveCategory={activeCategory === entry.category}
+              onClickCategory={onClickCategory}
+              activeRoute={activeRoute}
             />
           ))}
         </ul>

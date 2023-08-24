@@ -18,7 +18,7 @@ export const Layout: FC = () => {
   const closeOverlay = () => setIsBurgerOpen(!isBurgerOpen);
 
   return (
-    <LayoutContainer $isMenuOpen={isBurgerOpen}>
+    <LayoutContainer $isBurgerMenuOpen={isBurgerOpen}>
       <Overlay $isOverlayVisible={isBurgerOpen} onClick={closeOverlay} />
       <Header user={MOCK_USER} isBurgerOpen={isBurgerOpen} setIsBurgerOpen={setIsBurgerOpen} />
       {bookPathMatch && <Breadcrumbs />}
