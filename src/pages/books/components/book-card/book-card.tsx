@@ -29,7 +29,7 @@ export const BookCard: FC<BookProps> = ({
     <Card>
       <Content>
         <NavLink to={`/${RouteNames.books}/${category}/${id}`}>
-          <Image>{image ? <img alt={title} src={image} /> : <CoverPlaceholder />}</Image>
+          <Image>{image?.length ? <img alt={title} src={image[0]} /> : <CoverPlaceholder />}</Image>
           {view === ViewVariant.tiles ? (
             <TileBookInfo>
               {rating ? (

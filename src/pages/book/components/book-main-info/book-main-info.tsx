@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
 
 import {
   AboutContainer,
@@ -14,6 +14,7 @@ import { BookSectionLayout } from '../book-section-layout';
 
 import { CoverPlaceholder } from 'assets/icons';
 import { PrimaryButton } from 'components/buttons/primary-button';
+import { Slider } from 'components/slider';
 import { BookSectionTitle } from 'types/enum';
 import { BookDTO } from 'types/types';
 import { getButtonStyles } from 'utils/get-button-styles';
@@ -27,9 +28,25 @@ export const BookMainInfo: FC<BookMainInfoProps> = ({ book }) => {
   const { image, title, author, publishingYear, isBooked, bookedTill, about } = book;
   const { buttonType, buttonTitle } = getButtonStyles(isBooked, bookedTill!);
 
+  const getImagesSection = useMemo(
+    () =>
+      !image?.length ? (
+        <ImageContainer>
+          <CoverPlaceholder />
+        </ImageContainer>
+      ) : image.length > 1 ? (
+        <Slider images={image} />
+      ) : (
+        <ImageContainer>
+          <img alt={title} src={image[0]} />
+        </ImageContainer>
+      ),
+    [image, title]
+  );
+
   return (
     <MainInfoContainer>
-      <ImageContainer>{image ? <img alt={title} src={image} /> : <CoverPlaceholder />}</ImageContainer>
+      {getImagesSection}
       <ContentContainer>
         <h3>{title}</h3>
         <AuthorContainer>

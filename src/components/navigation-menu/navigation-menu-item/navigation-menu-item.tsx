@@ -1,37 +1,65 @@
-import { FC } from 'react';
+import { FC, useMemo } from 'react';
+import { NavLink } from 'react-router-dom';
 
-import { CurrentActiveLink, NavigationMenuPoint } from './navigation-menu-item.style';
+import {
+  CurrentActiveLink,
+  CurrentLink,
+  LinkContent,
+  MenuSeparator,
+  NavigationMenuPoint
+} from './navigation-menu-item.style';
 
 import { CategoriesList } from '../categories-list';
 
+import { Down, Up } from 'assets/icons';
 import { RouteNames } from 'types/enum';
 import { NavMenuItem } from 'types/types';
 
 type NavMenuItemProps = {
   item: NavMenuItem;
-  onClickRoute: (route: RouteNames) => any;
   activeRoute: RouteNames;
+  onClickRoute: (route: RouteNames, e: React.SyntheticEvent) => void;
+  onClickCategory: (e: React.SyntheticEvent) => void;
   isCategoriesListOpen: boolean;
-  setIsCategoriesListOpen: (value: boolean) => any;
+  isBurgerMenu?: boolean;
 };
 
 export const NavigationMenuItem: FC<NavMenuItemProps> = ({
   item,
-  onClickRoute,
   activeRoute,
+  onClickRoute,
+  onClickCategory,
   isCategoriesListOpen,
-  setIsCategoriesListOpen
+  isBurgerMenu = false
 }) => {
   const isActive = activeRoute === item.route;
+  const Arrow = useMemo(() => (isCategoriesListOpen ? Up : Down), [isCategoriesListOpen]);
+
+  if (item.isBurgerOnly && !isBurgerMenu) return null;
 
   return (
-    <NavigationMenuPoint>
-      <CurrentActiveLink to={`/${item.route}`} $isActive={isActive} onClick={() => onClickRoute(item.route)}>
-        {item.title}
-      </CurrentActiveLink>
-      {item.list && isActive && activeRoute === RouteNames.books && isCategoriesListOpen && (
-        <CategoriesList list={item.list} />
-      )}
-    </NavigationMenuPoint>
+    <>
+      {item.route === RouteNames.profile && <MenuSeparator />}
+      <NavigationMenuPoint onClick={(e: any) => onClickRoute(item.route, e)}>
+        <CurrentLink>
+          <CurrentActiveLink $isActive={isActive}>
+            <NavLink to={`/${item.route}`}>
+              <LinkContent>
+                {item.title} {item.list && activeRoute === RouteNames.books && <Arrow />}
+              </LinkContent>
+            </NavLink>
+          </CurrentActiveLink>
+        </CurrentLink>
+        {item.list && (
+          <CategoriesList
+            list={item.list}
+            isListOpen={isCategoriesListOpen && activeRoute === RouteNames.books}
+            onClickCategory={onClickCategory}
+            isBurgerMenu={isBurgerMenu}
+            activeRoute={activeRoute}
+          />
+        )}
+      </NavigationMenuPoint>
+    </>
   );
 };

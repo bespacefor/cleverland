@@ -1,7 +1,10 @@
 export enum RouteNames {
   books = 'books',
+  booksAll = 'all',
   contract = 'contract',
-  terms = 'terms'
+  terms = 'terms',
+  profile = 'profile',
+  exit = 'exit'
 }
 
 export enum BookCategory {
