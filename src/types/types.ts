@@ -1,6 +1,7 @@
 import { BookCategory, RouteNames } from './enum';
 
 export type NavMenuItemList = {
+  route: RouteNames;
   listTitle: string;
   entries: Array<{
     name: string;
@@ -10,6 +11,7 @@ export type NavMenuItemList = {
 };
 
 export type NavMenuItem = {
+  isBurgerOnly: boolean;
   route: RouteNames;
   title: string;
   list?: NavMenuItemList;
@@ -23,7 +25,7 @@ export type UserDTO = {
 export type BookDTO = {
   id: number;
   category: string;
-  image?: string;
+  image?: string[];
   title: string;
   author: string;
   isBooked: boolean;

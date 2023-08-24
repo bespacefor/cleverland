@@ -4,9 +4,11 @@ import { NavMenuItem } from 'types/types';
 
 export const NAVIGATION_MENU_LIST: NavMenuItem[] = [
   {
+    isBurgerOnly: false,
     route: RouteNames.books,
     title: 'Витрина книг',
     list: {
+      route: RouteNames.booksAll,
       listTitle: 'Все книги',
       entries: [
         {
@@ -83,12 +85,24 @@ export const NAVIGATION_MENU_LIST: NavMenuItem[] = [
     }
   },
   {
+    isBurgerOnly: false,
     route: RouteNames.terms,
     title: 'Правила пользования'
   },
   {
+    isBurgerOnly: false,
     route: RouteNames.contract,
     title: 'Договор оферты'
+  },
+  {
+    isBurgerOnly: true,
+    route: RouteNames.profile,
+    title: 'Профиль'
+  },
+  {
+    isBurgerOnly: true,
+    route: RouteNames.exit,
+    title: 'Выход'
   }
 ];
 
@@ -110,3 +124,8 @@ export const SOCIAL_MEDIA_LIST = [
     icon: Linkedin
   }
 ];
+
+export const windowSizes = {
+  laptop: 1024,
+  tablet: 768
+};

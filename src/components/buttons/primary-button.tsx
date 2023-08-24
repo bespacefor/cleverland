@@ -15,7 +15,7 @@ const buttonStyles = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 12px 23px;
+  padding: 12px 0;
   border-radius: 20px;
   cursor: pointer;
   & p {

@@ -13,10 +13,10 @@ type StarsRatingProps = {
   showEmptyStars?: boolean;
 };
 
-export const StarsRating: FC<StarsRatingProps> = ({ rating, variant = '', showEmptyStars = true }) => {
+export const StarsRating: FC<StarsRatingProps> = ({ rating = 0, variant = '', showEmptyStars = true }) => {
   const renderStars = useCallback(() => {
     const starFill = (index: number) => {
-      if (index < Math.round(rating!)) {
+      if (index < Math.round(rating)) {
         return baseTheme.colors.main.stars;
       } else {
         return baseTheme.colors.main.white;

@@ -12,15 +12,11 @@ type HeaderAuthorizationProps = {
   user: UserDTO;
 };
 
-export const HeaderAuthorization: FC<HeaderAuthorizationProps> = ({ user }) => {
-  const { name, avatar } = user;
-
-  return (
-    <HeaderAuthorizationContainer>
-      <Subtitle>Привет, {name}!</Subtitle>
-      <Link to='/'>
-        <Avatar size={58} background={avatar || avatarPlaceholder} />
-      </Link>
-    </HeaderAuthorizationContainer>
-  );
-};
+export const HeaderAuthorization: FC<HeaderAuthorizationProps> = ({ user: { name, avatar = avatarPlaceholder } }) => (
+  <HeaderAuthorizationContainer>
+    <Subtitle>Привет, {name}!</Subtitle>
+    <Link to='/'>
+      <Avatar size={58} background={avatar} />
+    </Link>
+  </HeaderAuthorizationContainer>
+);
