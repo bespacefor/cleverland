@@ -39,6 +39,14 @@ const router = createHashRouter([
       {
         path: `/${RouteNames.contract}`,
         element: <ContractPage />
+      },
+      {
+        path: `/${RouteNames.profile}`,
+        element: <ContractPage />
+      },
+      {
+        path: `/${RouteNames.exit}`,
+        element: <ContractPage />
       }
     ]
   }

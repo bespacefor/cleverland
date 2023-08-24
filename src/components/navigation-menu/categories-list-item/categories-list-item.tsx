@@ -11,13 +11,20 @@ type CategoriesItemProps = {
     count: number;
     category: BookCategory;
   };
+  onClickCategory: (e: React.SyntheticEvent) => void;
+  activeRoute: RouteNames;
   $isActiveCategory: boolean;
 };
 
-export const CategoriesListItem: FC<CategoriesItemProps> = ({ item, $isActiveCategory }) => (
-  <CategoriesListPoint $isActive={$isActiveCategory}>
-    <NavLink to={`/${RouteNames.books}/${item.category}`}>
-      {item.name} <span>{item.count}</span>
+export const CategoriesListItem: FC<CategoriesItemProps> = ({
+  item: { name, count = 0, category },
+  onClickCategory,
+  activeRoute,
+  $isActiveCategory
+}) => (
+  <CategoriesListPoint onClick={(e: any) => onClickCategory(e)} $isActive={$isActiveCategory}>
+    <NavLink to={`/${RouteNames.books}/${category}`}>
+      {name} <span>{count}</span>
     </NavLink>
   </CategoriesListPoint>
 );

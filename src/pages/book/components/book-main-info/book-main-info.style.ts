@@ -7,7 +7,7 @@ export const MainInfoContainer = styled.div`
   margin-bottom: 42px;
   @media ${({ theme }) => theme.media.tablet} {
     column-gap: 32px;
-    row-gap: 16px;
+    row-gap: 48px;
     grid-template-columns: min-content auto;
     margin-bottom: 52px;
   }
@@ -21,6 +21,7 @@ export const MainInfoContainer = styled.div`
 export const ImageContainer = styled.div`
   width: 445px;
   height: 594px;
+  background-color: ${({ theme }) => theme.colors.grey.black5};
   border: ${({ theme }) => `1px solid ${theme.colors.grey.black43}`};
   border-radius: 10px;
   overflow: hidden;
@@ -94,7 +95,6 @@ export const AuthorContainer = styled.h5`
 
 export const ButtonContainer = styled.div`
   width: 350px;
-  margin-bottom: 32px;
   .buttonInBookPage {
     padding: 14px 0;
     border-radius: 30px;

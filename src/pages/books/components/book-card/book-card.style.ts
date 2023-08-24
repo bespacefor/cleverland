@@ -10,6 +10,7 @@ export const BookCardContainer = styled.div`
 `;
 
 export const BookImage = styled.div`
+  background-color: ${({ theme }) => theme.colors.grey.black5};
   border: ${({ theme }) => `1px solid ${theme.colors.grey.black40}`};
   overflow: hidden;
   display: flex;

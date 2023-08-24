@@ -5,12 +5,8 @@ type IconProps = {
   url: string;
 };
 
-const Icon: FC<IconProps> = ({ icon: IconComponent, url }) => {
-  return (
-    <a href={url} target='_blank' rel='noreferrer'>
-      <IconComponent />
-    </a>
-  );
-};
-
-export default Icon;
+export const SocialMediaIcon: FC<IconProps> = ({ icon: SocialIcon, url }) => (
+  <a href={url} target='_blank' rel='noreferrer'>
+    <SocialIcon />
+  </a>
+);

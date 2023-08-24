@@ -13,6 +13,5 @@ export const CategoriesListPoint = styled.li<{ $isActive: boolean }>`
     $isActive &&
     css`
       color: ${theme.colors.main.carrot};
-      font-weight: bold;
     `}
 `;

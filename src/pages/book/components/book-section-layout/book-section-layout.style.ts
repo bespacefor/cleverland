@@ -2,6 +2,9 @@ import styled, { css } from 'styled-components';
 
 export const BookSectionTitle = styled.h5<{ $paddingOnMobile: boolean }>`
   font: ${({ theme }) => theme.fonts.h5};
+  display: flex;
+  align-items: center;
+
   @media ${({ theme }) => theme.media.tablet} {
     font: ${({ theme }) => theme.fonts.subtitleLarge};
   }
@@ -20,5 +23,9 @@ export const BookSectionTitle = styled.h5<{ $paddingOnMobile: boolean }>`
     @media ${({ theme }) => theme.media.tablet} {
       display: none;
     }
+  }
+  & svg {
+    margin: 0 24px;
+    cursor: pointer;
   }
 `;

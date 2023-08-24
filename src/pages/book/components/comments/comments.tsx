@@ -21,7 +21,7 @@ export const CommentsContainer = styled.div`
 `;
 
 export const Comments: FC<CommentsProps> = ({ comments }) => (
-  <BookSectionLayout paddingOnMobile={true} title={BookSectionTitle.comments} amount={comments.length}>
+  <BookSectionLayout paddingOnMobile={true} title={BookSectionTitle.comments} amount={comments.length} showArrow={true}>
     <CommentsContainer>
       <CommentsList comments={comments} />
     </CommentsContainer>
