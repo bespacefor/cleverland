@@ -15,5 +15,5 @@ export { ReactComponent as StarOutline } from './starOutline.svg';
 export { ReactComponent as Up } from './up.svg';
 export { ReactComponent as Vk } from './vk.svg';
 export { ReactComponent as LoaderIcon } from './loader.svg';
-export { ReactComponent as successMessage } from './successMessage.svg';
-export { ReactComponent as warningMessage } from './warningMessage.svg';
+export { ReactComponent as SuccessMessage } from './successMessage.svg';
+export { ReactComponent as WarningMessage } from './warningMessage.svg';

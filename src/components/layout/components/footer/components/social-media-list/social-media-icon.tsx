@@ -6,7 +6,7 @@ type IconProps = {
 };
 
 export const SocialMediaIcon: FC<IconProps> = ({ icon: SocialIcon, url }) => (
-  <a href={url} target='_blank' rel='noreferrer'>
+  <a href={url} target='_blank' rel='noreferrer noopener'>
     <SocialIcon />
   </a>
 );

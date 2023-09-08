@@ -54,7 +54,7 @@ export enum BookSectionTitle {
   comments = 'Отзывы'
 }
 
-export enum DetailsTitles {
+export enum BookDetailsTitles {
   publishingHouse = 'Издательство',
   publishingYear = 'Год издания',
   pages = 'Страниц',
